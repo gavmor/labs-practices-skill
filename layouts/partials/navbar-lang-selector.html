@@ -1,9 +1,0 @@
-<a class="nav-link dropdown-toggle lang-switcher-toggle" href="#" id="langDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <i class="fas fa-globe mr-1"></i>{{ .Language.LanguageName }}
-</a>
-<div class="dropdown-menu dropdown-menu-right lang-switcher-menu" aria-labelledby="langDropdown">
-  <a class="dropdown-item active" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-  {{ range .Translations }}
-  <a class="dropdown-item" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
-  {{ end }}
-</div>

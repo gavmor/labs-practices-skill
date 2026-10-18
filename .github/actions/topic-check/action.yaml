@@ -1,5 +1,0 @@
-name: topic-check
-description: runs a check to make sure valid topics and subtopics are defined
-runs:
-  using: "docker"
-  image: "Dockerfile"

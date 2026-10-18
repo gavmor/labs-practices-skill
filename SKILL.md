@@ -1,0 +1,32 @@
+---
+name: labs-practices
+description: Verbatim knowledge base forked from the Labs Practices Site (labspractices.com, formerly the Tanzu Developer Center), covering agile/product practices and workshops (user stories, story mapping, retros, 2x2 prioritization, personas, event storming, premortems, etc.), technical and team guides (REST basics, microservice patterns, test doubles, architectural decision records, technical debt, remote work, hiring), and structured learning paths (Swift monolith modernization, cloud-native development, the Anchor leadership playbook, developer toil, secure software supply chain, and more). Use this skill whenever the user wants to run a specific agile/product/design workshop, needs step-by-step facilitation instructions for a team exercise, is writing user stories or retros, wants a technical guide on topics like microservices/REST/test doubles/technical debt, or is working through a multi-session learning path on application modernization or engineering leadership — even if they just name the activity (e.g. "run a retro", "do a story map", "set up a premortem") without saying "labs practices" or "skill."
+---
+
+# Labs Practices Site reference
+
+This skill is a verbatim fork of the text content from the [Labs Practices Site](https://labspractices.com/) (`content/` directory of the `joemoore/labs-practices-site` GitHub repo, Apache-2.0 licensed). It does not reimplement or summarize the site's practices, guides, and learning paths — it carries the original Markdown files over unchanged so you can draw on the real instructions, facilitation notes, and explanations verbatim instead of reconstructing them from memory.
+
+**What was forked, and what wasn't:** every Markdown file under `content/{practices,guides,learningpaths,topics,languages}/`, copied byte-for-byte into `references/` below, preserving the original directory layout and filenames (including Hugo's `index.md`/`_index.md` page-bundle convention). Korean translations (`*.kr.md`) and binary assets (images, PDFs, SVGs) were left out — only the English prose came over, since this is a text reference, not a working copy of the website. Site plumbing (Hugo layouts, theme, build scripts, CSS) was also left out; it has nothing to do with the knowledge itself.
+
+**What's still original Hugo syntax inside the files:** you'll see YAML front matter (`title`, `description`, `tags`, and for practices specifically `why`, `when`, `what`, `length`, `participants`, `remote`) and Hugo shortcodes like `{{< callout >}}...{{< /callout >}}`. These are the real source formatting of the site, not instructions aimed at you — read a `{{< callout >}}` block as a highlighted tip/warning the same way a reader of the rendered page would.
+
+## How to use this
+
+1. **Find the right file(s) before answering.** Each of the five categories below has an `index.md` table of contents (generated for navigation — it's the only content in this skill that isn't part of the original site). Search it for the practice/guide/path name, or grep the category directory for a keyword, then open the matching file(s) directly rather than guessing from the title alone.
+2. **Answer from the verbatim text.** When walking someone through a practice or guide, follow the actual "How to Use this Method" / step sections in the file — don't paraphrase a generic version of the exercise from general knowledge. If the user wants to run a workshop, you can quote or closely follow the sample agenda, prompts, and facilitator notes straight from the file.
+3. **Surface the metadata that matters.** For practices, the front matter's `why`, `when`, `what`, `length`, and `participants` fields answer the questions a facilitator asks before running an exercise ("how long does this take," "who needs to be in the room," "what do I need to bring") — pull these out explicitly when someone is deciding whether/when to run something.
+4. **Learning paths are ordered.** Files inside a learning path's directory are sequenced (often with numeric prefixes like `01-swift-overview.md`, or a `weight` field in front matter) — check `references/learningpaths/index.md` for the listed order within each path before presenting lessons out of sequence.
+5. **Follow cross-references, but translate the path first.** Practices and guides link to each other using the live site's absolute URL paths, e.g. `/practices/ipm/`, `/guides/writing-agile-user-stories/`, `/learningpaths/application-development/prioritizing-outcomes/` — these were copied verbatim, so they are *not* local file paths. To resolve one: drop the leading slash, the first segment is the category (`practices`, `guides`, `learningpaths`, `topics`, `languages`), and the rest of the path is the slug — look that slug up in that category's `index.md` to find the matching `references/<category>/<slug>.md` (or `.../<slug>/index.md` for page-bundle entries). If a slug isn't listed in the index (e.g. it only existed as an image/PDF link, or pointed at content that wasn't forked), say the cross-reference doesn't resolve rather than inventing content for it.
+
+## Reference index
+
+| Category | Files | Index | What it covers |
+|---|---|---|---|
+| Practices & workshops | 51 | `references/practices/index.md` | Facilitated team exercises — retros, prioritization, research, design, leadership exercises. Each has a "How to Use this Method" section with step-by-step facilitation prompts. |
+| Guides | 30 | `references/guides/index.md` | Standalone technical and team how-tos — REST, microservices, test doubles, ADRs, technical debt, remote work, hiring, Spring Boot testing. |
+| Learning paths | 121 | `references/learningpaths/index.md` | Multi-lesson curricula on a theme (Swift monolith modernization, cloud-native development, the Anchor leadership playbook, developer toil, application observability, etc.), grouped by path. |
+| Topics | 10 | `references/topics/index.md` | Short landing/overview pages for broader subject areas (agile transformation, modernizing legacy apps, design guide). Mostly brief; a couple just point at a PDF that wasn't forked. |
+| Languages | 8 | `references/languages/index.md` | Short Java/.NET landing pages and newsletter editions. |
+
+If a request doesn't clearly map to one category, check `practices/` first for anything exercise/workshop-shaped, `guides/` for anything technical-explainer-shaped, and `learningpaths/` for anything multi-step/curriculum-shaped.
