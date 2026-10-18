@@ -13,11 +13,27 @@ This skill is a verbatim fork of the text content from the [Labs Practices Site]
 
 ## How to use this
 
-1. **Find the right file(s) before answering.** Each of the five categories below has an `index.md` table of contents (generated for navigation — it's the only content in this skill that isn't part of the original site). Search it for the practice/guide/path name, or grep the category directory for a keyword, then open the matching file(s) directly rather than guessing from the title alone.
-2. **Answer from the verbatim text.** When walking someone through a practice or guide, follow the actual "How to Use this Method" / step sections in the file — don't paraphrase a generic version of the exercise from general knowledge. If the user wants to run a workshop, you can quote or closely follow the sample agenda, prompts, and facilitator notes straight from the file.
-3. **Surface the metadata that matters.** For practices, the front matter's `why`, `when`, `what`, `length`, and `participants` fields answer the questions a facilitator asks before running an exercise ("how long does this take," "who needs to be in the room," "what do I need to bring") — pull these out explicitly when someone is deciding whether/when to run something.
-4. **Learning paths are ordered.** Files inside a learning path's directory are sequenced (often with numeric prefixes like `01-swift-overview.md`, or a `weight` field in front matter) — check `references/learningpaths/index.md` for the listed order within each path before presenting lessons out of sequence.
-5. **Follow cross-references, but translate the path first.** Practices and guides link to each other using the live site's absolute URL paths, e.g. `/practices/ipm/`, `/guides/writing-agile-user-stories/`, `/learningpaths/application-development/prioritizing-outcomes/` — these were copied verbatim, so they are *not* local file paths. To resolve one: drop the leading slash, the first segment is the category (`practices`, `guides`, `learningpaths`, `topics`, `languages`), and the rest of the path is the slug — look that slug up in that category's `index.md` to find the matching `references/<category>/<slug>.md` (or `.../<slug>/index.md` for page-bundle entries). If a slug isn't listed in the index (e.g. it only existed as an image/PDF link, or pointed at content that wasn't forked), say the cross-reference doesn't resolve rather than inventing content for it.
+This is reference content, not a canned workflow — so turn *consulting* it into one. Don't paraphrase from memory; open the file, and don't consider the answer finished until you can point at the evidence line called out in step 6.
+
+1. **Classify the request, then find the exact file before answering.** Decide whether the user wants to run an exercise (→ `practices/`), get a technical explanation (→ `guides/`), work through a curriculum (→ `learningpaths/`), or get oriented (→ `topics/`/`languages/`). Search that category's `index.md`, then open the matching file. Answering from the title alone, or from general knowledge of "how retros usually work," is the exact failure mode this skill exists to prevent.
+2. **Follow the file's actual steps; don't improvise around them.** Quote or closely follow the real "How to Use this Method" / step sections — timings, headcounts, and specific prompts included. If you want to add a tip the source doesn't have, say explicitly that it's your addition, not the site's.
+3. **Surface the decision-relevant metadata up front.** For practices: `why`, `when`, `what`, `length`, `participants` from the front matter. These are the facts a facilitator checks before agreeing to run something — don't bury them below the agenda.
+4. **Learning paths are ordered — respect it.** Check `references/learningpaths/index.md` for each path's lesson order (numeric file prefixes or a `weight` front matter field) before presenting lessons out of sequence.
+5. **Resolve cross-references; don't fabricate when they miss.** Site-internal links are absolute paths like `/practices/ipm/` — translate `/category/slug/` to `references/category/slug.md` (or `.../slug/index.md`). If the slug isn't in that category's index, say so instead of inventing the linked content.
+6. **Close with the file's own definition of done.** Most practices end in a "Success/Expected Outcomes" section — restate it as the exit criterion for the exercise, not just another paragraph to read past. For guides, the equivalent check is whether the answer actually grounded itself in that specific file or drifted into generic advice. For learning paths, name which lesson you're on and what comes next.
+7. **Stay in scope.** If asked to run the Premortem, run the Premortem — don't substitute a "better" practice, merge two practices together, or pad the agenda with a step the source doesn't prescribe. If the user's situation genuinely doesn't fit the practice they asked for, say so instead of quietly reshaping the content to fit.
+
+## Don't rationalize past the source
+
+Specific ways this skill gets used wrong, and why each one defeats the point of forking verbatim content instead of just knowing this stuff already:
+
+| If you're about to... | Don't — here's why |
+|---|---|
+| Answer "how to run a retro" from general knowledge because you already know retros | The fork exists to use *this* facilitation script, with its specific prompts and timings — look it up anyway. |
+| Skip the front-matter `length`/`participants` because the user didn't ask for them | They're the first thing a real facilitator checks before committing a time slot — surface them unasked. |
+| Summarize a practice's steps in your own words to save space | The agenda's specific wording is the content being forked; paraphrasing it defeats the fork. |
+| Treat a dead cross-reference as license to make something up | A missing link means that slug wasn't forked (Korean-only, image-only, etc.) — say it's unavailable. |
+| Blend two related practices into one "better" exercise because it seems more efficient | That's a new practice the site doesn't document. Run what was asked, or ask first. |
 
 ## Reference index
 
